@@ -22,7 +22,13 @@ public class Application {
 		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 		
 		CustomerServiceInterface customerServiceInterface = appContext.getBean("customerServiceInterfaceBean",CustomerServiceInterface.class);
-				
+		
+		System.out.println(customerServiceInterface);
+
+		CustomerServiceInterface customerServiceInterface2 = appContext.getBean("customerServiceInterfaceBean",CustomerServiceInterface.class);
+		
+		System.out.println(customerServiceInterface2);
+		
 		System.out.println(customerServiceInterface.findAllLocal().get(0).getFirstName());
 		System.out.println(customerServiceInterface.findAllLocal().get(0).getLastName());
 		System.out.println(customerServiceInterface.findAllLocal().get(0).getAge());

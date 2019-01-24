@@ -23,9 +23,17 @@ public class Application {
 		//CustomerServiceInterface customerServiceInterface = new CustomerServiceImpl();
 		
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+		
 		CustomerServiceInterface customerServiceInterface = appContext.getBean("customerServiceImplBean", CustomerServiceImpl.class);
 		
+		System.out.println(customerServiceInterface);
 
+		
+		CustomerServiceInterface customerServiceInterface2 = appContext.getBean("customerServiceImplBean", CustomerServiceImpl.class);
+		
+		System.out.println(customerServiceInterface2);
+
+		
 		System.out.println(customerServiceInterface.findAllLocal().get(0).getFirstName());
 		System.out.println(customerServiceInterface.findAllLocal().get(0).getLastName());
 		System.out.println(customerServiceInterface.findAllLocal().get(0).getAge());

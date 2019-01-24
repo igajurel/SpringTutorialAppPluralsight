@@ -11,7 +11,7 @@
 	<!-- the name= field points to the variable/object being used in setter 
 		of the main bean class which is referring -->
 	<bean name="customerServiceImplBean"
-		class="com.igajurel.service.CustomerServiceImpl" autowire="byType">
+		class="com.igajurel.service.CustomerServiceImpl" autowire="byType" scope="prototype">
 		
 		<!--  <property name="customerRepositoryInterface" ref="customerRepositoryImplBean" />  -->
 		

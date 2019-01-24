@@ -6,6 +6,8 @@ package com.igajurel.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.igajurel.modules.Customer;
@@ -17,6 +19,8 @@ import com.igajurel.repository.CustomerRepositoryInterface;
  */
 
 @Service("customerServiceInterfaceBean")
+//@Scope("singleton")
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CustomerServiceImpl implements CustomerServiceInterface {
 	
 	
