@@ -1,6 +1,8 @@
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import com.igajurel.repository.CustomerRepositoryInterface;
 import com.igajurel.repository.HibernateCustomerRepositoryImpl;
@@ -17,7 +19,13 @@ import com.igajurel.service.CustomerServiceInterface;
  */
 @Configuration
 @ComponentScan({"com.igajurel"})
+@PropertySource("app.properties")
 public class AppConfig {
+	
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
 	
 //	@Bean(name="customerServiceInterfaceBean")
 //	public CustomerServiceInterface getCustomerServiceInterface() {
